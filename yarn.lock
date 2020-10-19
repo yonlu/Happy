@@ -1539,6 +1539,18 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
+"@types/google-maps@^3.2.0":
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/@types/google-maps/-/google-maps-3.2.2.tgz#aa97b0880be787d7fb04662707e36125c2e6e2d8"
+  integrity sha512-/XPVfS28VzUdE/HlmBRoe5ii1nNMyWujyRfRY08bD/JgmPlWSiY8enB2dqTe9mlc3kULq7LfFa1wcupM+lQfqA==
+  dependencies:
+    "@types/googlemaps" "*"
+
+"@types/googlemaps@*":
+  version "3.40.0"
+  resolved "https://registry.yarnpkg.com/@types/googlemaps/-/googlemaps-3.40.0.tgz#786743648ab464fbeaa4cfe15230a7297273b309"
+  integrity sha512-KcAYVKjd5fL0Ur9G4xNL5YG/Bp5HFfdd8s/7j97eFcTyTpp7vIRcf8mtRBAIOM3QNgN2iJhSEecWTG2x8D+bnQ==
+
 "@types/history@*":
   version "4.7.8"
   resolved "https://registry.yarnpkg.com/@types/history/-/history-4.7.8.tgz#49348387983075705fe8f4e02fb67f7daaec4934"
@@ -1588,7 +1600,14 @@
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.6.tgz#f4c7ec43e81b319a9815115031709f26987891f0"
   integrity sha512-3c+yGKvVP5Y9TYBEibGNR+kLtijnj7mYrXRg+WpFb2X9xm04g/DXYkfg4hmzJQosc9snFNUPkbYIhu+KAm6jJw==
 
-"@types/leaflet@*":
+"@types/leaflet.gridlayer.googlemutant@^0.4.5":
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/@types/leaflet.gridlayer.googlemutant/-/leaflet.gridlayer.googlemutant-0.4.5.tgz#ab81ada449afdef60b96434f301efe74df237347"
+  integrity sha512-kMTEMiC0E0gg/KKanU2HQIpJ9yCwA2ldn5kcTeG2TeC3biEHaElhHxYvoHPAPEZ84kUkxgNlgTjyfAbmlvScvQ==
+  dependencies:
+    "@types/leaflet" "*"
+
+"@types/leaflet@*", "@types/leaflet@^1.4.1":
   version "1.5.19"
   resolved "https://registry.yarnpkg.com/@types/leaflet/-/leaflet-1.5.19.tgz#f290e21fe7a4744d68bb4b0709e99ce490120e6e"
   integrity sha512-ZAKqfvdU/+KFoCpf8aUba09F8mfSc8R2esq++Cha3E2DgwS5K/I/4eJ+0JylrVHZivgY7PSAeXFv/izP+81/MQ==
@@ -4961,6 +4980,11 @@ globby@^6.1.0:
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
 
+google-maps@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/google-maps/-/google-maps-3.3.0.tgz#4432b4715406bc15268ad35b1dd1b04d974956a6"
+  integrity sha512-pj4En0cWKG+lcBvC7qrzu5ItiMsYNTgjG2capsPzAbAM/O8ftugGpUUftTTwdGL8KlNvB4CEZ6IBWwpWYzUEpw==
+
 graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0, graceful-fs@^4.2.2:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.3.tgz#4a12ff1b60376ef09862c2093edd908328be8423"
@@ -6483,6 +6507,11 @@ lazy-cache@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/lazy-cache/-/lazy-cache-1.0.4.tgz#a1d78fc3a50474cb80845d3b3b6e1da49a446e8e"
   integrity sha1-odePw6UEdMuAhF07O24dpJpEbo4=
+
+leaflet.gridlayer.googlemutant@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/leaflet.gridlayer.googlemutant/-/leaflet.gridlayer.googlemutant-0.10.0.tgz#1be79c9f2e341b5062058985ba77602e0d29eedc"
+  integrity sha512-UgB90Gl2PzEnvmkc0FrUlBQl6JcYAhHe0GsUmJ7huMo7LHKYDQd4z8EsJKzM4iUsd4A8ZizTRx/M+E91eDiOJA==
 
 leaflet@^1.7.1:
   version "1.7.1"
@@ -8509,7 +8538,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.4"
 
-prop-types@^15.5.8, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -8720,13 +8749,6 @@ react-error-overlay@^6.0.7:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.7.tgz#1dcfb459ab671d53f660a991513cb2f0a0553108"
   integrity sha512-TAv1KJFh3RhqxNvhzxj6LeT5NWklP6rDr2a0jaTfsZ5wSZWHOGeqQyejUp3xxLfPt2UpyJEcVQB/zyPcmonNFA==
 
-react-geolocated@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/react-geolocated/-/react-geolocated-3.0.1.tgz#2ca5c6320127e08fb9d9e7c27d26199435c799a1"
-  integrity sha512-vgHEL9JY4TZ5ZCKdSPLm2qUHQ+2I1Nemc94QVZqfu4lDorRu6JjWHzvnRiGuv1PdEkPgqAEZDxjZ1zcxzFoSqA==
-  dependencies:
-    prop-types "^15.5.8"
-
 react-icons@^3.11.0:
   version "3.11.0"
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.11.0.tgz#2ca2903dfab8268ca18ebd8cc2e879921ec3b254"
@@ -8738,6 +8760,17 @@ react-is@^16.12.0, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-i
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-leaflet-google-layer@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/react-leaflet-google-layer/-/react-leaflet-google-layer-1.1.5.tgz#ed764d007ed91f69178d17ee16063ad3d83c0832"
+  integrity sha512-SdlF3S1KIgoPgto/AfmX2mjVTQYjUG0xlqg9ILkGOl6vpGWlOCTxxCohLSOTNjGvO53ugix3fLhrTKuYfKRNsA==
+  dependencies:
+    "@types/google-maps" "^3.2.0"
+    "@types/leaflet" "^1.4.1"
+    "@types/leaflet.gridlayer.googlemutant" "^0.4.5"
+    google-maps "^3.3.0"
+    leaflet.gridlayer.googlemutant "^0.10.0"
 
 react-leaflet@^2.7.0:
   version "2.7.0"

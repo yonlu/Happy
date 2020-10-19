@@ -1,6 +1,7 @@
 import React, { useEffect, useState, FormEvent, ChangeEvent } from "react";
 import { useHistory } from "react-router-dom";
-import { Map, Marker, TileLayer } from "react-leaflet";
+import { Map, Marker } from "react-leaflet";
+import ReactLeafletGoogleLayer from "react-leaflet-google-layer";
 import { LeafletMouseEvent } from "leaflet";
 
 import { FiPlus } from "react-icons/fi";
@@ -103,8 +104,12 @@ export default function CreateOrphanage() {
               zoom={15}
               onClick={handleMapClick}
             >
-              <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-
+              <ReactLeafletGoogleLayer
+                googleMapsLoaderConf={{
+                  KEY: `${process.env.REACT_APP_GOOGLE_API}`,
+                }}
+                type={"roadmap"}
+              />
               {position.latitude !== 0 && (
                 <Marker
                   interactive={false}

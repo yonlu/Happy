@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FiPlus, FiArrowRight } from "react-icons/fi";
-import { Map, TileLayer, Marker, Popup } from "react-leaflet";
+import { Map, Marker, Popup } from "react-leaflet";
+import ReactLeafletGoogleLayer from "react-leaflet-google-layer";
 
 import "leaflet/dist/leaflet.css";
 
@@ -28,7 +29,6 @@ function OrphanagesMap() {
     });
 
     if ("geolocation" in navigator) {
-      console.log("geolocation available");
       navigator.geolocation.getCurrentPosition((position) => {
         setCurrentLocation([
           position.coords.latitude,
@@ -61,7 +61,10 @@ function OrphanagesMap() {
         zoom={12}
         style={{ width: "100%", height: "100%" }}
       >
-        <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        <ReactLeafletGoogleLayer
+          googleMapsLoaderConf={{ KEY: `${process.env.REACT_APP_GOOGLE_API}` }}
+          type={"roadmap"}
+        />
 
         {orphanages.map((orphanage) => {
           return (
