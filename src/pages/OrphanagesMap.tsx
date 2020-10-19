@@ -20,11 +20,24 @@ interface Orphanage {
 
 function OrphanagesMap() {
   const [orphanages, setOrphanages] = useState<Orphanage[]>([]);
+  const [currentLocation, setCurrentLocation] = useState<number[]>([0, 0]);
 
   useEffect(() => {
     api.get("orphanages").then((response) => {
       setOrphanages(response.data);
     });
+
+    if ("geolocation" in navigator) {
+      console.log("geolocation available");
+      navigator.geolocation.getCurrentPosition((position) => {
+        setCurrentLocation([
+          position.coords.latitude,
+          position.coords.longitude,
+        ]);
+      });
+    } else {
+      console.log("geolocation not available");
+    }
   }, []);
 
   return (
@@ -34,7 +47,7 @@ function OrphanagesMap() {
           <img src={mapMarkerImg} alt="Happy marker logo" />
 
           <h2>Choose an orphanage from the map</h2>
-          <p>Many kids are waiting for your visit! :)</p>
+          <p>Many kids are eagerly waiting your visit! :)</p>
         </header>
 
         <footer>
@@ -44,7 +57,7 @@ function OrphanagesMap() {
       </aside>
 
       <Map
-        center={[42.1165144, -80.1132815]}
+        center={[currentLocation[0], currentLocation[1]]}
         zoom={12}
         style={{ width: "100%", height: "100%" }}
       >

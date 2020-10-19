@@ -1,4 +1,4 @@
-import React, { useState, FormEvent, ChangeEvent } from "react";
+import React, { useEffect, useState, FormEvent, ChangeEvent } from "react";
 import { useHistory } from "react-router-dom";
 import { Map, Marker, TileLayer } from "react-leaflet";
 import { LeafletMouseEvent } from "leaflet";
@@ -23,6 +23,21 @@ export default function CreateOrphanage() {
   const [open_on_weekends, setOpenOnWeekends] = useState(true);
   const [images, setImages] = useState<File[]>([]);
   const [previewImages, setPreviewImages] = useState<string[]>([]);
+
+  const [currentLocation, setCurrentLocation] = useState<number[]>([0, 0]);
+
+  useEffect(() => {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        setCurrentLocation([
+          position.coords.latitude,
+          position.coords.longitude,
+        ]);
+      });
+    } else {
+      console.log("geolocation not available");
+    }
+  }, []);
 
   function handleMapClick(event: LeafletMouseEvent) {
     const { lat, lng } = event.latlng;
@@ -83,7 +98,7 @@ export default function CreateOrphanage() {
             <legend>Orphanage information</legend>
 
             <Map
-              center={[-27.2092052, -49.6401092]}
+              center={[currentLocation[0], currentLocation[1]]}
               style={{ width: "100%", height: 280 }}
               zoom={15}
               onClick={handleMapClick}
