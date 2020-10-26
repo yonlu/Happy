@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://happy-typescript-api.herokuapp.com",
+  baseURL: "http://happy-api.sallada.org",
 });
 
 export default api;
