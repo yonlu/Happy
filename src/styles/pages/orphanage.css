@@ -180,3 +180,83 @@
 .orphanage-details .orphanage-details-content button.contact-button:hover {
   background: #36cf82;
 }
+
+button.cancel-button {
+  margin-top: 32px;
+
+  width: 100%;
+  height: 64px;
+  border: 0;
+  cursor: pointer;
+  background: #ff669d;
+  border-radius: 20px;
+  color: #ffffff;
+  font-weight: 800;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: background-color 0.2s;
+}
+
+button.cancel-button:hover {
+  background: #ff5996;
+}
+
+@media (max-width: 650px) {
+  #page-orphanage aside {
+    display: none;
+  }
+
+  #page-orphanage main {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  #page-orphanage main .orphanage-details {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  #page-orphanage main .orphanage-details > img {
+    height: auto;
+  }
+
+  #page-orphanage main .orphanage-details .images {
+    margin: 4px 5px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 16px;
+    padding: 0 10px;
+  }
+
+  #page-orphanage main .orphanage-details .images button {
+    max-height: 140px;
+  }
+
+  #page-orphanage main .orphanage-details .orphanage-details-content {
+    padding: 0 30px;
+    margin: 30px 0;
+  }
+
+  #page-orphanage main .orphanage-details .orphanage-details-content h1 {
+    font-size: 2.5rem;
+  }
+
+  #page-orphanage main .orphanage-details .orphanage-details-content p {
+    font-size: 1rem;
+  }
+
+  #page-orphanage main .orphanage-details .orphanage-details-content h2 {
+    font-size: 2rem;
+  }
+
+  #page-orphanage
+    main
+    .orphanage-details
+    .orphanage-details-content
+    .open-details {
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+  }
+}

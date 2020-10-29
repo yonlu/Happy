@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FiClock, FiInfo } from "react-icons/fi";
 import { Map, Marker } from "react-leaflet";
 import ReactLeafletGoogleLayer from "react-leaflet-google-layer";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
 import Sidebar from "../components/Sidebar";
 import mapIcon from "../utils/mapIcon";
@@ -29,6 +29,8 @@ interface OrphanageParams {
 }
 
 export default function Orphanage() {
+  const history = useHistory();
+
   const params = useParams<OrphanageParams>();
   const [orphanage, setOrphanage] = useState<Orphanage>();
   const [activeImageIndex, setActiveIndexImage] = useState(0);
@@ -130,11 +132,15 @@ export default function Orphanage() {
                 </div>
               )}
             </div>
-            {/* 
-            <button type="button" className="contact-button">
-              <FaWhatsapp size={20} color="#FFF" />
-              Entrar em contato
-            </button> */}
+
+            <button
+              onClick={() => {
+                history.goBack();
+              }}
+              className="cancel-button"
+            >
+              Go back
+            </button>
           </div>
         </div>
       </main>
