@@ -206,10 +206,17 @@ export default function CreateOrphanage() {
           <button className="confirm-button" type="submit">
             Confirm
           </button>
+
+          <button
+            onClick={() => {
+              history.goBack();
+            }}
+            className="cancel-button"
+          >
+            Cancel
+          </button>
         </form>
       </main>
     </div>
   );
 }
-
-// return `https://a.tile.openstreetmap.org/${z}/${x}/${y}.png`;

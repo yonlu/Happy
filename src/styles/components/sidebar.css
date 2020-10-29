@@ -37,3 +37,9 @@ aside.app-sidebar footer a:hover,
 aside.app-sidebar footer button:hover {
   background: #17d6eb;
 }
+
+@media (max-width: 1000px) {
+  #page-map aside {
+    display: none;
+  }
+}
